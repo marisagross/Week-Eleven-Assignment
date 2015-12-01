@@ -16,6 +16,9 @@ Start with 100 to 1000, step 10
 import random
 
 # Define ranges here
+startRange = 100
+endRange = 1000
+stepRange = 10 
 
 def main():
     printHeader()
@@ -25,11 +28,21 @@ def main():
 
 
 def printHeader():
-    print("Some informative text")
+    print("The displacement: ")
 
 def getRandomWalk(steps):
     # Calculate a random walk of given steps
-    return 0 # replace with actual average
+    
+    d = 0
+    for toss in range(steps):
+        coin = random.randint(0,1)
+        if coin == 1:
+            d = d + 1
+        else:
+            d = d - 1
+            
+    
+    return d # replace with actual average
 
 if __name__ == "__main__":
     main()
